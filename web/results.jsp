@@ -4,7 +4,10 @@
     Author     : Ben Hay and Haris Cesko
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@include file="/Includes/header.html" %>
+<%@taglib uri="/WEB-INF/hay_cesko.tld" prefix="elon"%>
+<%--<elon:currencyFormat></elon:currencyFormat>--%>
 <section>
     <h1>Future Value Calculator</h1>
 
@@ -24,9 +27,26 @@
             </tr>
             <tr>
                 <td class="alignRight">Future Value:</td>
-                <td class="alignLeft">${investment.futureValue$}</td>
+                <td class="alignLeft"><elon:currencyFormat/>${investment.futureValue$}</td>
             </tr>
         </tbody>
-    </table> <br> <br>
+    </table>
+            
+    <table>
+        <tbody>
+            <th>
+                <td>Year</td>
+                <td>Value</td>
+            </th>
+            <c:forEach items="$(years)" var="amount" varStatus="status">
+                <tr>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </c:forEach>
+        </tbody>
+    </table>
+            
+    <a href="index.jsp" title="Return to Calculator">Return to Calculator</a><br> <br>
 </section>
 <%@include file="/Includes/footer.html" %>

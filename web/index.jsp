@@ -6,7 +6,7 @@
 
 <%@include file="/Includes/header.html" %>
 <section>
-    <form method="post" action="calc">
+    <form method="post" action="calculate">
         <h1>Future Value <br id="hide"> Calculator</h1>
 
         <label>Investment Amount</label><br id="hide">

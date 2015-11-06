@@ -1,7 +1,8 @@
-package edu.elon.invetment;
+package edu.elon.investment;
 
 import java.io.Serializable;
 import java.text.NumberFormat;
+import java.util.ArrayList;
 import java.util.Locale;
 
 /**
@@ -14,6 +15,7 @@ public class Investment implements Serializable {
         private double yearlyInterestRate;
         private int numberOfYears;
         private double futureValue = 0;
+        private ArrayList<Integer> years;
         
         
         public Investment(){
@@ -26,6 +28,10 @@ public class Investment implements Serializable {
             this.investmentAmount = investmentAmount;
             this.yearlyInterestRate = interestRate;
             this.numberOfYears = numberOfYears;
+            
+            for(int i = 0; i < numberOfYears; i++){
+                years.add(i);
+            }
         }
         
         public double getInvestmentAmount(){
